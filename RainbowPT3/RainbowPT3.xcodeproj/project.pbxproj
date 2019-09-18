@@ -33,10 +33,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		271E77252331CA8200C324C7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				27C466602331C93A0020DA0B /* AppDelegate.swift */,
+				27C466692331C93B0020DA0B /* LaunchScreen.storyboard */,
+				27C4666C2331C93B0020DA0B /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		271E77262331CAC300C324C7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		271E77272331CACA00C324C7 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		271E77282331CAD700C324C7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				27C466642331C93A0020DA0B /* Main.storyboard */,
+				27C466672331C93B0020DA0B /* Assets.xcassets */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		27C466542331C93A0020DA0B = {
 			isa = PBXGroup;
 			children = (
-				27C4665F2331C93A0020DA0B /* RainbowPT3 */,
+				27C4665F2331C93A0020DA0B /* Rainbow */,
 				27C4665E2331C93A0020DA0B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,16 +82,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		27C4665F2331C93A0020DA0B /* RainbowPT3 */ = {
+		27C4665F2331C93A0020DA0B /* Rainbow */ = {
 			isa = PBXGroup;
 			children = (
-				27C466602331C93A0020DA0B /* AppDelegate.swift */,
-				27C466642331C93A0020DA0B /* Main.storyboard */,
-				27C466672331C93B0020DA0B /* Assets.xcassets */,
-				27C466692331C93B0020DA0B /* LaunchScreen.storyboard */,
-				27C4666C2331C93B0020DA0B /* Info.plist */,
+				271E77262331CAC300C324C7 /* Model */,
+				271E77272331CACA00C324C7 /* View Controllers */,
+				271E77282331CAD700C324C7 /* Storyboards */,
+				271E77252331CA8200C324C7 /* Resources */,
 			);
-			path = RainbowPT3;
+			path = Rainbow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,7 +312,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HL3XLM68NV;
-				INFOPLIST_FILE = RainbowPT3/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/RainbowPT3/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -298,7 +330,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HL3XLM68NV;
-				INFOPLIST_FILE = RainbowPT3/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/RainbowPT3/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
