@@ -42,6 +42,12 @@ class ColorsTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            colors.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+        }
+    }
     
     
     
@@ -59,4 +65,33 @@ class ColorsTableViewController: UITableViewController {
     }
     
     
+    @IBAction func addColorButton(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Add Color", message: "Add a RGB Value for the new color", preferredStyle: .alert)
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Color name"
+        }
+        alert.addTextField { (textField) in
+            textField.placeholder = "Red 0-255"
+        }
+        alert.addTextField { (textField) in
+            textField.placeholder = "Green 0-255"
+        }
+        alert.addTextField { (textField) in
+            textField.placeholder = "Blue 0-255"
+        }
+        
+        alert.addAction(UIAlertAction(title: "Create", style: .default, handler: { (_) in
+            guard let name = alert.textFields?[0].text, !name.isEmpty else {return}
+            guard let redString = alert.textFields?[1].text, let redValue = Double(redString) else {return}
+            guard let greeenString = alert.textFields?[2].text, let greenValue = Double(greeenString) else {return}
+            guard let blueString = alert.textFields?[3].text, let bluevalue = Double(blueString) else {return}
+            
+            let color = MyColor(name: name, color: UIColor(red: CGFloat(redValue / 255), green: CGFloat(greenValue / 255), blue: CGFloat(bluevalue / 255), alpha: 1.0))
+            self.colors.append(color)
+            self.tableView.reloadData()
+        }))
+        
+        present(alert, animated: true, completion: nil)
+    }
 }
